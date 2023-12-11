@@ -1,15 +1,30 @@
 {
     "configurations": [
         {
-            "name": "Linux",
+            "name": "Win32",
             "includePath": [
-                "${workspaceFolder}/**"
+                "c:/Users/Landon/Programming/ultimate-bogo/**",
+                "C:/Users/Landon/vcpkg/installed/x64-windows/include"
             ],
-            "defines": [],
-            "compilerPath": "/usr/bin/clang",
+            "defines": [
+                "_DEBUG",
+                "UNICODE",
+                "_UNICODE"
+            ],
+            "windowsSdkVersion": "10.0.22621.0",
+            "compilerPath": "C:/Program Files/LLVM/bin/clang++.exe",
             "cStandard": "c17",
             "cppStandard": "c++20",
-            "intelliSenseMode": "linux-clang-x64"
+            "intelliSenseMode": "windows-clang-x86",
+            "mergeConfigurations": false,
+            "browse": {
+                "path": [
+                    "c:/Users/Landon/Programming/ultimate-bogo/**",
+                    "C:/Users/Landon/vcpkg/installed/x64-windows/include",
+                    "c:/Users/Landon/Programming/ultimate-bogo"
+                ],
+                "limitSymbolsToIncludedHeaders": true
+            }
         }
     ],
     "version": 4
