@@ -8,6 +8,7 @@
 #include <random>
 #include <vector>
 
+/// @brief The best sorting algoritm
 class Bogosort {
     template <typename T>
     static std::vector<T> sorting_fn(std::vector<T> vec, std::atomic<bool> &success) {
@@ -21,11 +22,16 @@ class Bogosort {
     }
 
   public:
+    /// @brief The thing that does the magic
+    /// @tparam T 
+    /// @param vector Input Vector 
+    /// @param threads Number of threads to use
+    /// @return The vector you supplied, sorted
     template <typename T>
-    static std::vector<T> sort(std::vector<T> vec, int threads) {
+    static std::vector<T> sort(std::vector<T> vector, int threads) {
         if (threads <= 1) {
             std::atomic<bool> success(false);
-            return sorting_fn(vec, success);
+            return sorting_fn(vector, success);
         }
 
         std::atomic<bool> success(false);
@@ -36,7 +42,7 @@ class Bogosort {
                 std::launch::async, [](std::vector<T> v, std::atomic<bool> &s) {
                     return sorting_fn(v, s);
                 },
-                vec, std::ref(success)));
+                vector, std::ref(success)));
         }
 
         for (auto &future : futures) {
@@ -46,7 +52,7 @@ class Bogosort {
             }
         }
 
-        return vec;
+        return vector;
     }
 };
 
