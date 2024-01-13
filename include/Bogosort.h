@@ -1,3 +1,6 @@
+#ifndef Bogosort_H
+#define Bogosort_H
+
 #include <algorithm>
 #include <chrono>
 #include <future>
@@ -46,3 +49,5 @@ class Bogosort {
         return vec;
     }
 };
+
+#endif
