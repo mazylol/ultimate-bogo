@@ -5,7 +5,7 @@
 #include <random>
 #include <vector>
 
-class Bogo {
+class Bogosort {
     template <typename T>
     static std::vector<T> sorting_fn(std::vector<T> vec, std::atomic<bool> &success) {
         while (!success.load() && !std::is_sorted(vec.begin(), vec.end())) {
